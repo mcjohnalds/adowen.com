@@ -45,7 +45,8 @@
   right: 20px;
   bottom: 20px;
   left: auto;
-  position: fixed;
+  /* MUI default styles have this set to position: relative which breaks the layout */
+  position: fixed !important;
 }
 
 .caption {
