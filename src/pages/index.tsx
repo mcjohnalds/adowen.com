@@ -15,8 +15,15 @@ import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
 import PlaceIcon from "@mui/icons-material/Place";
 import Fab from "@mui/material/Fab";
+import { event } from "nextjs-google-analytics";
 
 export default function Home() {
+  const recordClickContactItemEvent = (type: string) => {
+    if (process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID) {
+      event("clickContactItem", { type });
+    }
+  };
+
   return (
     <>
       <Head>
@@ -164,21 +171,31 @@ export default function Home() {
         <p className={styles.caption}>Me and my cheeky grin.</p>
         <hr style={{ marginBottom: 35 }} />
         <h2 id="contact">Contact</h2>
-        <a href="tel:+61416185172" className={styles.contactItem}>
+        <a
+          href="tel:+61416185172"
+          className={styles.contactItem}
+          onClick={() => recordClickContactItemEvent("Phone")}
+        >
           <LocalPhoneIcon className={styles.contactItemIcon} /> +61 416 185 172
         </a>
-        <a href="mailto:john@adowen.com" className={styles.contactItem}>
+        <a
+          href="mailto:john@adowen.com"
+          className={styles.contactItem}
+          onClick={() => recordClickContactItemEvent("Email")}
+        >
           <EmailIcon className={styles.contactItemIcon} /> john@adowen.com
         </a>
         <a
           href="https://www.linkedin.com/in/john-andrew-owen/"
           className={styles.contactItem}
+          onClick={() => recordClickContactItemEvent("LinkedIn")}
         >
           <LinkedInIcon className={styles.contactItemIcon} /> John Andrew Owen
         </a>
         <a
           href="https://twitter.com/JohnAndrewOwen"
           className={styles.contactItem}
+          onClick={() => recordClickContactItemEvent("Twitter")}
         >
           <TwitterIcon className={styles.contactItemIcon} /> @JohnAndrewOwen
         </a>
