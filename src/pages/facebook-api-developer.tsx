@@ -101,6 +101,7 @@ export default function Home() {
                     variant="contained"
                     href="#contact"
                     endIcon={<ArrowForwardIcon />}
+                    onClick={() => recordClickGoToContactFormButtonEvent("1")}
                   >
                     <div>
                       Get Your <u>Free</u> Strategy Session
@@ -219,6 +220,7 @@ export default function Home() {
                   variant="contained"
                   href="#contact"
                   endIcon={<ArrowForwardIcon />}
+                  onClick={() => recordClickGoToContactFormButtonEvent("2")}
                 >
                   Interested? Let&apos;s Get in touch
                 </Button>
@@ -550,6 +552,12 @@ const recordSubmitContactFormEvent = () => {
 const recordClickContactItemEvent = (type: string) => {
   if (process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID) {
     event("clickContactItem", { type });
+  }
+};
+
+const recordClickGoToContactFormButtonEvent = (location: string) => {
+  if (process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID) {
+    event("clickGoToContactFormButton", { location });
   }
 };
 
