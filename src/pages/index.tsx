@@ -14,8 +14,10 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
 import PlaceIcon from "@mui/icons-material/Place";
+import AppSettingsAltIcon from "@mui/icons-material/AppSettingsAlt";
 import Fab from "@mui/material/Fab";
 import { event } from "nextjs-google-analytics";
+import Link from "next/link";
 
 export default function Home() {
   const recordClickContactItemEvent = (type: string) => {
@@ -202,6 +204,10 @@ export default function Home() {
         <div className={styles.contactItem}>
           <PlaceIcon className={styles.contactItemIcon} /> Brisbane, Australia
         </div>
+        <Link href="/facebook-api-developer" className={styles.contactItem}>
+          <AppSettingsAltIcon className={styles.contactItemIcon} /> I also do
+          Facebook API development
+        </Link>
       </main>
     </>
   );
