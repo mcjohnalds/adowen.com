@@ -1,5 +1,6 @@
 .root {
   background-color: #F3F3F3;
+  font-display: swap;
 }
 
 .root ul {
@@ -64,8 +65,8 @@
 
 .goToContactFormButton {
   max-width: 100%;
-  font-size: 1.1em;
-  padding: 0.5em 1em;
+  font-size: 1.1em !important;
+  padding: 0.5em 1em !important;
 }
 
 .goToContactFormButton *:first-child {
@@ -151,7 +152,7 @@
 }
 
 .contactFormField {
-  margin-bottom: 1rem;
+  margin-bottom: 1rem !important;
 }
 
 .contactFormButton {

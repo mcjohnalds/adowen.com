@@ -96,7 +96,8 @@ export default function Home() {
                 </p>
                 <div className={styles.goToContactFormButtonContainer}>
                   <Button
-                    className={`${styles.goToContactFormButton} ${varelaRound.className}`}
+                    className={styles.goToContactFormButton}
+                    style={varelaRound.style}
                     variant="contained"
                     href="#contact"
                     endIcon={<ArrowForwardIcon />}
@@ -213,7 +214,8 @@ export default function Home() {
               <SectionDivider />
               <div className={styles.goToContactFormButtonContainer}>
                 <Button
-                  className={`${styles.goToContactFormButton} ${varelaRound.className}`}
+                  className={styles.goToContactFormButton}
+                  style={varelaRound.style}
                   variant="contained"
                   href="#contact"
                   endIcon={<ArrowForwardIcon />}
@@ -522,6 +524,7 @@ const ContactForm = () => {
         disabled={disabled}
         loading={isFormSubmitting}
         endIcon={<SendIcon />}
+        style={varelaRound.style}
       >
         Send
       </LoadingButton>
