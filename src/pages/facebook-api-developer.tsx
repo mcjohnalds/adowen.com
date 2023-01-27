@@ -9,6 +9,7 @@ import PlaceIcon from "@mui/icons-material/Place";
 import AppSettingsAltIcon from "@mui/icons-material/AppSettingsAlt";
 import SendIcon from "@mui/icons-material/Send";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import PrivacyTipIcon from "@mui/icons-material/PrivacyTip";
 import { event } from "nextjs-google-analytics";
 import Button from "@mui/material/Button";
 import { Varela_Round } from "@next/font/google";
@@ -62,7 +63,7 @@ const varelaRound = Varela_Round({
   weight: "400",
 });
 
-export default function Home() {
+export default function FacebookApiDeveloper() {
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -599,6 +600,9 @@ const Footer = () => (
     <div className={styles.contactItem}>
       <PlaceIcon className={styles.contactItemIcon} /> Brisbane, Australia
     </div>
+    <Link href="/privacy-policy" className={styles.contactItem} target="_blank">
+      <PrivacyTipIcon className={styles.contactItemIcon} /> Privacy policy
+    </Link>
   </>
 );
 

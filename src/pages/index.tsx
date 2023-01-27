@@ -15,6 +15,7 @@ import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
 import PlaceIcon from "@mui/icons-material/Place";
 import AppSettingsAltIcon from "@mui/icons-material/AppSettingsAlt";
+import PrivacyTipIcon from "@mui/icons-material/PrivacyTip";
 import Fab from "@mui/material/Fab";
 import { event } from "nextjs-google-analytics";
 import Link from "next/link";
@@ -207,6 +208,13 @@ export default function Home() {
         <Link href="/facebook-api-developer" className={styles.contactItem}>
           <AppSettingsAltIcon className={styles.contactItemIcon} /> I also do
           Facebook API development
+        </Link>
+        <Link
+          href="/privacy-policy"
+          className={styles.contactItem}
+          target="_blank"
+        >
+          <PrivacyTipIcon className={styles.contactItemIcon} /> Privacy policy
         </Link>
       </main>
     </>
