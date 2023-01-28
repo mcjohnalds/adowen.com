@@ -61,6 +61,7 @@ const WEB3_FORMS_SUBJECT =
 const varelaRound = Varela_Round({
   subsets: ["latin"],
   weight: "400",
+  display: "swap",
 });
 
 export default function FacebookApiDeveloper() {
