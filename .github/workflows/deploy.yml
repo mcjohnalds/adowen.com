@@ -11,12 +11,10 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
-      - name: Debug env vars
-        run: echo "AWS_ROLE_ARN=$AWS_ROLE_ARN"
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ env.AWS_ROLE_ARN }}
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
           aws-region: ap-southeast-2
       - name: Lint
         run: cfn-lint
