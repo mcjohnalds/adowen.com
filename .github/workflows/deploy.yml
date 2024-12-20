@@ -20,6 +20,6 @@ jobs:
         # We use the docker image instead of the marketplace version because the
         # docker image is way faster because it doesn't have to download
         # cfn-lint every time
-        uses: docker://ghcr.io/scottbrenner/cfn-lint-action:master
+        uses: docker://ghcr.io/scottbrenner/cfn-lint-action:main
       - name: Deploy
         run: bash deploy.sh
