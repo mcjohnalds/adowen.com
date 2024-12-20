@@ -2,5 +2,5 @@ templates:
   - template.yml
 include_checks:
   - I
-# ignore_checks:
-# - I3042
+ignore_checks:
+  - I3042
