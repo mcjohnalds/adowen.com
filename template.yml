@@ -12,16 +12,6 @@ Resources:
         IgnorePublicAcls: true
         RestrictPublicBuckets: true
 
-  TestBucket:
-    Type: AWS::S3::Bucket
-    DeletionPolicy: Delete
-    Properties:
-      PublicAccessBlockConfiguration:
-        BlockPublicAcls: true
-        BlockPublicPolicy: true
-        IgnorePublicAcls: true
-        RestrictPublicBuckets: true
-
   WebsiteBucketPolicy:
     Type: AWS::S3::BucketPolicy
     Properties:
@@ -84,6 +74,9 @@ Resources:
         - arn:aws:iam::aws:policy/AdministratorAccess
 
 Outputs:
+  CloudFrontDistributionId:
+    Description: CloudFront Distribution ID
+    Value: !GetAtt CloudFrontDistribution.Id
   CloudFrontDomainName:
     Description: CloudFront Domain Name
     Value: !GetAtt CloudFrontDistribution.DomainName
