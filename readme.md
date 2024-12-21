@@ -11,9 +11,20 @@
 cfn-lint
 ```
 
-## Deploy
+## Bootstrap
 
-Do this once manually in prod to set up the stack then let CI handle future updates.
+Run this once manually in prod then let CI handle deployments.
+
+```bash
+aws iam create-open-id-connect-provider \
+  --url https://token.actions.githubusercontent.com \
+  --thumbprint-list 6938fd4d98bab03faadb97b34396831e3780aea1 \
+  --client-id-list sts.amazonaws.com
+export AWS_PROFILE=...
+./deploy.sh
+```
+
+## Deploy
 
 ```bash
 export AWS_PROFILE=...
